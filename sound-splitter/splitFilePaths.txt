@@ -1,0 +1,2 @@
+vocal=C:\Users\gladi\PycharmProjects\jonductify\audio_output\titanic\vocals.wav
+accompaniment=C:\Users\gladi\PycharmProjects\jonductify\audio_output\titanic\accompaniment.wav
