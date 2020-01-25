@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Adding gitignore for editors
+.idea
+.vscode
+
 # C extensions
 *.so
 
