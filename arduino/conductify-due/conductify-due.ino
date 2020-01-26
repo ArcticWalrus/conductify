@@ -30,7 +30,7 @@ void loop()
           is_conducting = 0;
         }
 
-        volume = 1 - (mpu.getPitch() + 20)/80;
+        volume = 1 - (mpu.getPitch() + 30)/70;
         if(volume < 0) volume = 0;
         else if(volume > 1) volume = 1;
 
