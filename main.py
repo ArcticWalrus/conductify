@@ -3,6 +3,7 @@ from UI import conductify_gui
 import sys
 from PyQt5.QtCore import QTimer
 from musicManager import octave
+from musicManager import autosplitr
 import pygame
 import serial
 
@@ -35,11 +36,17 @@ select = """
     }
 """
 
-pygame.mixer.set_num_channels(26)
 sound_arr = []
-for wav in wav_list:
-    print('spleet/' + wav)
-    sound_arr.append(pygame.mixer.Sound('spleet/' + wav))
+
+
+def reload():
+    pygame.mixer.set_num_channels(26)
+    for wav in wav_list:
+        print('music/' + wav)
+        sound_arr.append(pygame.mixer.Sound('music/' + wav))
+
+
+reload()
 
 
 app = QtWidgets.QApplication(sys.argv)
@@ -116,7 +123,10 @@ def control_volume():
 def search_music():
     filename, songtitle = oct.getSongs(ui.searchInput.toPlainText())
     print(filename, songtitle)
-    return
+    splitter = autosplitr.Autosplitr('', filename)
+    splitter.split()
+    reload()
+    start()
 
 
 main_window_Qdialog.qTimer = QTimer()

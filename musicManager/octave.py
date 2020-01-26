@@ -44,4 +44,4 @@ class Octave:
 
 if __name__ == "__main__":
     octave = Octave()
-    octave.getSongs("bennie")
+    octave.getSongs("ben")
