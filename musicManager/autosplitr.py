@@ -8,7 +8,7 @@ class Autosplitr:
         self.ogfilename = self.input_path + ogfilename
         self.ogfolder = ogfilename.split(".")[0]
         self.path = os.getcwd() + "\\"
-        self.s_path = self.path + "audio_output\\" + self.ogfolder + "\\"
+        self.s_path = "audio_output/" + self.ogfolder + "/"
         self.voice = ""
         self.drums = ""
         self.bass = ""

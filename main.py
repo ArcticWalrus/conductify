@@ -1,3 +1,6 @@
+import os
+from distutils.dir_util import copy_tree
+
 from PyQt5 import QtWidgets
 from UI import conductify_gui
 import sys
@@ -39,15 +42,28 @@ select = """
 sound_arr = []
 
 
+def start():
+    for i in range(5):
+        print(sound_arr[i])
+        sound_arr[i].play()
+
+
+def stop():
+    if sound_arr:
+        for i in range(5):
+            sound_arr[i].stop()
+
+
 def reload():
+    global sound_arr
+    stop()
+    sound_arr = []
     pygame.mixer.set_num_channels(26)
     for wav in wav_list:
         print('music/' + wav)
         sound_arr.append(pygame.mixer.Sound('music/' + wav))
 
-
 reload()
-
 
 app = QtWidgets.QApplication(sys.argv)
 main_window_Qdialog = QtWidgets.QDialog()
@@ -65,18 +81,6 @@ def read_ser(port):
         for i in range(len(arr)):
             num_arr.append(float(arr[i]))
         return num_arr
-
-
-def start():
-    for i in range(5):
-        print(sound_arr[i])
-        sound_arr[i].play()
-
-
-def stop():
-    if sound_arr:
-        for i in range(5):
-            sound_arr[i].stop()
 
 
 def change_bar_color(num):
@@ -122,12 +126,28 @@ def control_volume():
 
 def search_music():
     filename, songtitle = oct.getSongs(ui.searchInput.toPlainText())
-    print(filename, songtitle)
-    splitter = autosplitr.Autosplitr('', filename)
+    filename2 = filename.split("//")[1]
+    print(filename2, songtitle)
+    splitter = autosplitr.Autosplitr('music/', filename2)
+    print("spath: " + splitter.s_path)
+
+    vocal_files = ['vocals.wav', 'bass.wav', 'drums.wav', 'piano.wav', 'other.wav']
+    if os.path.exists(splitter.s_path):
+        os.remove(splitter.s_path)
+
+    print(os.path.exists(splitter.s_path))
     if filename == '':
         print('Song not found. Try again')
         return 1
     splitter.split()
+
+    for file in vocal_files:
+        if os.path.isfile('music/' + file):
+            os.remove('music/' + file)
+
+    print("spath: splitter.s_path: " + splitter.s_path)
+    copy_tree(splitter.s_path, 'music')
+
     reload()
     start()
     return 0
