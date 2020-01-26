@@ -30,7 +30,7 @@ class Octave:
         url = "https://conuhacks-2020.tsp.cld.touchtunes.com/v1/songs/" + str(song_id)
         song = json.loads(requests.request("GET", url, headers=self.headers, data=self.payload).content)
         print(song['playUrl'])
-        self.download(song['playUrl'])
+        self.download(song['playUrl'], song_title)
 
     def refactorSongName(self, song_title):
         title = song_title.split(' ')
@@ -40,9 +40,9 @@ class Octave:
 
     def download(self, url, song_title):
         print('Downloading file:', song_title)
-        wget.download(url, out='{}{}'.format(self.source_path, song_title))
+        #wget.download(url, out='{}{}'.format(self.source_path, song_title))
         filename = wget.download(url)
-        print(filename)
+        #print(filename)
         return filename
 
 
