@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1168</width>
+    <width>1128</width>
     <height>863</height>
    </rect>
   </property>
@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>770</y>
+     <x>120</x>
+     <y>760</y>
      <width>291</width>
      <height>91</height>
     </rect>
@@ -29,8 +29,8 @@
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>680</x>
-     <y>770</y>
+     <x>720</x>
+     <y>760</y>
      <width>291</width>
      <height>91</height>
     </rect>
@@ -42,9 +42,9 @@
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>30</x>
      <y>20</y>
-     <width>1161</width>
+     <width>1081</width>
      <height>541</height>
     </rect>
    </property>
@@ -131,52 +131,70 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_2">
+  <widget class="QLabel" name="otherLabel">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>560</y>
-     <width>1161</width>
-     <height>171</height>
+     <x>140</x>
+     <y>590</y>
+     <width>101</width>
+     <height>141</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_2">
-    <item>
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>otherLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_5">
-      <property name="text">
-       <string>drumsLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_4">
-      <property name="text">
-       <string>pianoLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_3">
-      <property name="text">
-       <string>bassLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_2">
-      <property name="text">
-       <string>vocalsLabel</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="drumLabel">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>590</y>
+     <width>101</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>piano</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pianoLabel">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>590</y>
+     <width>91</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>drums</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="bassLabel">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>590</y>
+     <width>91</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>bass</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="vocalsLabel">
+   <property name="geometry">
+    <rect>
+     <x>900</x>
+     <y>590</y>
+     <width>91</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>vocals</string>
+   </property>
   </widget>
  </widget>
  <resources/>
