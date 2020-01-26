@@ -100,6 +100,7 @@ def change_bar_color(num):
 
 def control_volume():
     control = read_ser(ser)
+
     if control is not None:
         change_bar_color(int(control[2]))
         if control[0] == 1:
