@@ -13,11 +13,40 @@ from PyQt5.QtGui import QIcon, QPixmap
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(1128, 863)
+        Form.resize(1128, 1000)
         Form.setStyleSheet("background-color: #6898a4;")
-        # self.searchbar = QtWidgets.QLineEdit(Form)
-        # self.searchbar.setGeometry(QtCore.QRect(100, 500, 291, 91))
-        # self.searchbar.setObjectName("searchbar")
+        self.horizontalLayoutWidget = QtWidgets.QWidget(Form)
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(250, 900, 601, 51))
+        self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.searchInput = QtWidgets.QPlainTextEdit(self.horizontalLayoutWidget)
+        self.searchInput.setObjectName("searchInput")
+        self.searchInput.setFocusPolicy(QtCore.Qt.ClickFocus)
+        self.horizontalLayout.addWidget(self.searchInput)
+        self.search = QtWidgets.QPushButton(self.horizontalLayoutWidget)
+        self.search.setStyleSheet("""
+            QPushButton {
+                background-color: rgb(125, 125, 125);
+                border-style: outset;
+                border-width: 2px;
+                border-radius: 10px;
+                border-color: beige;
+                font: bold 20px;
+                min-width: 10em;
+                padding: 6px;
+            }
+            QPushButton:pressed {
+                background-color: rgb(150, 150, 150);
+                border-style: inset;
+        }""")
+        self.search.setObjectName("search")
+        self.horizontalLayout.addWidget(self.search)
+        self.horizontalLayoutWidget.raise_()
+        self.searchInput.raise_()
+        self.searchInput.raise_()
+
         self.start_pushButton = QtWidgets.QPushButton(Form)
         self.start_pushButton.setGeometry(QtCore.QRect(120, 760, 291, 91))
         self.start_pushButton.setObjectName("start_pushButton")
@@ -208,6 +237,7 @@ class Ui_Form(object):
         self.pianoLabel.setText(_translate("Form", "drums"))
         self.bassLabel.setText(_translate("Form", "bass"))
         self.vocalsLabel.setText(_translate("Form", "vocals"))
+        self.search.setText(_translate("Form", "Search"))
 
 
 if __name__ == "__main__":

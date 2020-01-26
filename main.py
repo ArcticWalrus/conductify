@@ -110,12 +110,17 @@ def control_volume():
                 print("Out of Range")
 
 
+def search_music():
+    return
+
+
 main_window_Qdialog.qTimer = QTimer()
 main_window_Qdialog.qTimer.setInterval(1)
 main_window_Qdialog.qTimer.timeout.connect(control_volume)
 
 main_window_Qdialog.qTimer.start()
 ui.start_pushButton.clicked.connect(start)
+ui.search.clicked.connect(search_music)
 ui.stop_pushButton.clicked.connect(stop)
 
 sys.exit(app.exec_())
