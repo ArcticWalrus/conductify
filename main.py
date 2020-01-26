@@ -9,7 +9,7 @@ pygame.mixer.init()
 pygame.init()
 
 ser = serial.Serial('COM18', baudrate=115200, timeout=1)
-wav_list = ["vocals.wav", "bass.wav", "drums.wav", "piano.wav", "other.wav"]
+wav_list = ["other.wav", "drums.wav", "piano.wav", "bass.wav", "vocals.wav"]
 
 non_select = """
     QProgressBar {
@@ -59,13 +59,14 @@ def read_ser(port):
 
 
 def start():
-    for i in range(4):
+    for i in range(5):
+        print(sound_arr[i])
         sound_arr[i].play()
 
 
 def stop():
     if sound_arr:
-        for i in range(4):
+        for i in range(5):
             sound_arr[i].stop()
 
 
