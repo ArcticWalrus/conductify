@@ -9,7 +9,7 @@ __pycache__/
 
 # C extensions
 *.so
-
+.idea
 # Distribution / packaging
 .Python
 build/
@@ -131,3 +131,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Potentially copyrighted audio
+*.mp3
+*.wav
+*.m4a
+

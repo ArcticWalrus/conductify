@@ -1,0 +1,2 @@
+originalAudio=titanic.mp3
+splitType=2stem
