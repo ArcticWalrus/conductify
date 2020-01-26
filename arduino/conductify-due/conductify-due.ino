@@ -36,10 +36,10 @@ void loop()
 
         yaw = mpu.getYaw();
         if(abs(yaw) > 160 ) channel = 2;
-        else if(abs(yaw) > 100 & yaw < 0) channel = 3;
-        else if(abs(yaw) > 40 & yaw < 0) channel = 4;
-        else if(abs(yaw) > 100 & yaw > 0) channel = 1;
-        else if(abs(yaw) > 40 & yaw > 0) channel = 0;
+        else if(abs(yaw) > 120 & yaw < 0) channel = 3;
+        else if(abs(yaw) > 80 & yaw < 0) channel = 4;
+        else if(abs(yaw) > 120 & yaw > 0) channel = 1;
+        else if(abs(yaw) > 80 & yaw > 0) channel = 0;
         else channel = -1;
         
         Serial.print(is_conducting);
