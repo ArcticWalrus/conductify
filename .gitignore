@@ -137,3 +137,5 @@ dmypy.json
 *.m4a
 *.ogg
 
+
+musicManager/pretrained_models/**

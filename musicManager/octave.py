@@ -5,8 +5,6 @@ import json
 import requests
 import os
 import wget
-import pwd
-import grp
 
 
 class Octave:
