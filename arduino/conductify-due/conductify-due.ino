@@ -23,7 +23,7 @@ void loop()
         while(Serial.available()){
           Serial.read();
         }
-        if(abs(mpu.getRoll()) < 110 ){
+        if(abs(mpu.getRoll()) < 120 ){
           is_conducting = 1;
         }
         else {
