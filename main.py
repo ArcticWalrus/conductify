@@ -2,12 +2,14 @@ from PyQt5 import QtWidgets
 from UI import conductify_gui
 import sys
 from PyQt5.QtCore import QTimer
+from musicManager import octave
 import pygame
 import serial
 
 pygame.mixer.init()
 pygame.init()
 
+oct = octave.Octave()
 ser = serial.Serial('COM18', baudrate=115200, timeout=1)
 wav_list = ["other.wav", "drums.wav", "piano.wav", "bass.wav", "vocals.wav"]
 
@@ -112,6 +114,8 @@ def control_volume():
 
 
 def search_music():
+    filename, songtitle = oct.getSongs(ui.searchInput.toPlainText())
+    print(filename, songtitle)
     return
 
 

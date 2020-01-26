@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 
 class autosplitr:
     def __init__(self, input_path, ogfilename):  # name of original audio fiile, 2/4/5stem splitting
-        self.input_path = input_path + '/'
+        self.input_path = input_path
         self.ogfilename = self.input_path + ogfilename
         self.ogfolder = ogfilename.split(".")[0]
         self.path = os.getcwd() + "\\"
