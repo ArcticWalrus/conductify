@@ -30,16 +30,16 @@ void loop()
           is_conducting = 0;
         }
 
-        volume = 1 - (mpu.getPitch() + 50)/100;
+        volume = 1 - (mpu.getPitch() + 20)/80;
         if(volume < 0) volume = 0;
         else if(volume > 1) volume = 1;
 
         yaw = mpu.getYaw();
         if(abs(yaw) > 160 ) channel = 2;
-        else if(abs(yaw) > 100 & yaw < 0) channel = 1;
-        else if(abs(yaw) > 40 & yaw < 0) channel = 0;
-        else if(abs(yaw) > 100 & yaw > 0) channel = 3;
-        else if(abs(yaw) > 40 & yaw > 0) channel = 4;
+        else if(abs(yaw) > 100 & yaw < 0) channel = 3;
+        else if(abs(yaw) > 40 & yaw < 0) channel = 4;
+        else if(abs(yaw) > 100 & yaw > 0) channel = 1;
+        else if(abs(yaw) > 40 & yaw > 0) channel = 0;
         else channel = -1;
         
         Serial.print(is_conducting);
