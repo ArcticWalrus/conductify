@@ -3,4 +3,7 @@ from octave import Octave
 
 
 x = Octave()
-print("Hello")
+filename, song_title = x.getSongs("hello")
+print(song_title)
+y = autosplitr('music', filename)
+y.split()
