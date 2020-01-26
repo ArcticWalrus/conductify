@@ -11,7 +11,7 @@ pygame.mixer.init()
 pygame.init()
 
 oct = octave.Octave()
-ser = serial.Serial('COM18', baudrate=115200, timeout=1)
+ser = serial.Serial('COM3', baudrate=115200, timeout=1)
 wav_list = ["other.wav", "drums.wav", "piano.wav", "bass.wav", "vocals.wav"]
 
 non_select = """
@@ -124,9 +124,13 @@ def search_music():
     filename, songtitle = oct.getSongs(ui.searchInput.toPlainText())
     print(filename, songtitle)
     splitter = autosplitr.Autosplitr('', filename)
+    if filename == '':
+        print('Song not found. Try again')
+        return 1
     splitter.split()
     reload()
     start()
+    return 0
 
 
 main_window_Qdialog.qTimer = QTimer()
