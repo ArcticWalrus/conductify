@@ -3,10 +3,7 @@
 
 import json
 import requests
-import os
 import wget
-import pwd
-import grp
 
 
 class Octave:
@@ -47,4 +44,4 @@ class Octave:
 
 if __name__ == "__main__":
     octave = Octave()
-    octave.getSongs("belong with me")
+    octave.getSongs("bennie")
